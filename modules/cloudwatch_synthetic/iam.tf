@@ -29,7 +29,7 @@ data "aws_iam_policy_document" "cw_synthetic_canaries_policy" {
     ]
 
     resources = [
-      "arn:aws:logs:us-east-1:439494775453:log-group:/aws/lambda/"
+      "arn:aws:logs:us-east-1:${var.aws_account}:log-group:/aws/lambda/"
     ]
   }
   statement {
