@@ -5,7 +5,7 @@ data "aws_iam_policy_document" "global_policy" {
     sid = "AllowAcccesstoSpecificActions"
     principals {
       type        = "AWS"
-      identifiers = ["877483292098", "564365460806", "889577669728", "489686677483"]
+      identifiers = ["var.aws_accounts"]
     }
     effect = "Allow"
     actions = [
