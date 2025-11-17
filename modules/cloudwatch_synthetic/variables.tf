@@ -21,9 +21,16 @@ variable "subnets" {
 }
 
 variable "security_group_id"{
-
+  description = "Security group to be used by the CW configuration
+  type = string
 }
 
 variable "s3_bucket" {
+  description = "Name of the bucket to be used"
+  type = "string"
+}
 
- }
+variable "aws_account"{
+  description = "AWS account to be used for the Lambda function"
+  type = "string"
+}
