@@ -30,7 +30,6 @@ This repository can be used to deploy various AWS resources, such as:
 
 - EC2
 - ECS
-- Lambda
 - S3
 - VPC and networking components
 - IAM roles and policies
@@ -46,13 +45,19 @@ This repository can be used to deploy various AWS resources, such as:
 - AWS credentials configured locally
 
 ### 2. Initialize Terraform
-
+```
+terraform init
+```
 
 ### 3. Preview changes
-
+```
+terraform plan
+```
 
 ### 4. Apply infrastructure
-
+```
+terraform apply
+```
 
 ## Environments
 
@@ -62,13 +67,4 @@ Each environment folder (such as dev, staging, or prod) contains its own variabl
 
 Modules allow reusable infrastructure patterns, such as VPC setups, S3 buckets, or compute services.
 
-## Contributing
-
-1. Create a new branch  
-2. Add or update Terraform configurations  
-3. Open a pull request for review
-
-## License
-
-Add a license here if applicable.
 
