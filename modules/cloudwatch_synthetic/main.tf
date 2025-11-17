@@ -4,7 +4,7 @@ locals {
   }
 
 resource "aws_synthetics_canary" "test" {
-  name                     = "${var.project_name}-${var.environment}-uptm"
+  name                     = "${var.project_name}-${var.environment}-uptime"
   artifact_s3_location     = "s3://${var.s3_bucket}/${var.project_name}-${var.environment}/"
   execution_role_arn       = aws_iam_role.cw_synthetic_canaries_role.arn
   handler                  = "pageLoadBlueprint.handler"
@@ -27,7 +27,7 @@ resource "aws_synthetics_canary" "test" {
 }
 
 resource "aws_cloudwatch_metric_alarm" "test_alarm" {
-  alarm_name          = "Synthetics-Alarm-${var.project_name}-${var.environment}-uptm"
+  alarm_name          = "Synthetics-Alarm-${var.project_name}-${var.environment}-uptime"
   comparison_operator = "GreaterThanOrEqualToThreshold"
   evaluation_periods  = "2"
   datapoints_to_alarm = "1"
@@ -36,10 +36,10 @@ resource "aws_cloudwatch_metric_alarm" "test_alarm" {
   period              = "60"
   threshold           = "2"
   statistic           = "Sum"
-  alarm_description   = "This metric monitors ${var.project_name}-${var.environment}-uptm API uptime"
+  alarm_description   = "This metric monitors ${var.project_name}-${var.environment}-uptime API uptime"
   treat_missing_data  = "breaching"
   alarm_actions       = [aws_sns_topic.service_topic.arn]
   dimensions = {
-    CanaryName = "${var.project_name}-${var.environment}-uptm"
+    CanaryName = "${var.project_name}-${var.environment}-uptime"
   }
 }
