@@ -55,3 +55,9 @@ variable "versioning" {
   type        = map(string)
   default     = {}
 }
+
+variable "aws_accounts"{
+description = "List of AWS accounts that will use the S3 policy"
+type = list
+default = []
+}
