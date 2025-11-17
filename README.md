@@ -16,7 +16,6 @@ This repository stores Infrastructure-as-Code (IaC) configurations for deploying
 ├── modules/           # Reusable Terraform modules for AWS services
 ├── environments/      # Environment-specific deployments (dev, staging, prod)
 ├── services/          # Service-specific Terraform configurations
-├── scripts/           # Optional helper scripts
 └── README.md
 ```
 ## Technologies Used
